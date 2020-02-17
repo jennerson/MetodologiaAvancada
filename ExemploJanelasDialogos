@@ -1,0 +1,41 @@
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author aluno
+ */
+public class ExemploJanelasDialogos {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        int faixa1 = 0, faixa2 = 0, faixa3 = 0, faixa4 = 0, faixa5 = 0, i=0;
+        int idade;
+        
+        for(i=1;i<=15;i++){
+            idade = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a "
+                    + i +"ª idade:"));
+            
+            if(idade <= 15) faixa1 ++;
+            else if(idade<= 30) faixa2 ++;
+            else if(idade<= 45) faixa3 ++;
+            else if(idade<= 60) faixa4 ++;
+            else faixa5 ++;
+        }
+        
+        String msg = "---=== Quantitativo por Faixa Etária"
+                + "\n"
+                + "- Faixa 1: " + faixa1 + "\n"
+                + "- Faixa 2: " + faixa2 + "\n"
+                + "- Faixa 3: " + faixa3 + "\n"
+                + "- Faixa 4: " + faixa4 + "\n"
+                + "- Faixa 5: " + faixa5;
+        
+        JOptionPane.showMessageDialog(null, msg);
+        JOptionPane.showMessageDialog(null, "% da Faixa 1: " + ((faixa1/15) * 100) + "%");
+        JOptionPane.showMessageDialog(null, "% da Faixa 5: " + ((faixa2/15) * 100) + "%");
+    }
+    
+}
